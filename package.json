@@ -2,7 +2,9 @@
   "name": "you2now",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon src"
+    "phoenix": "rm -rf node_modules package-lock && npm install --no-audit --no-fund --no-package-lock",
+    "dev": "nodemon src",
+    "start": "node src"
   },
   "dependencies": {
     "bytes": "3.1.2",
