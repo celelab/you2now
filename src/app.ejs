@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descargar video y audio de YouTube | You2Now</title>
+    <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css" />
+    <script defer src="/vendors/sweetalert2/sweetalert2@11.js"></script>
+    <script defer src="/app.js"></script>
+  </head>
+  <body>
+    <main class="container d-grid">
+      <div class="col-12 col-md-8 mx-auto my-4">
+        <div class="card">
+          <form class="card-body text-center mx-4 py-4" id="form">
+            <h2 class="my-4">Descargar video y audio de YouTube</h2>
+            <div class="input-group input-group-lg mb-3">
+              <input
+                type="url"
+                id="input-url"
+                name="url"
+                class="form-control"
+                placeholder="Pegue el enlace aquí"
+                aria-label="Page link"
+                aria-describedby="page link"
+                autocomplete="off"
+                autofocus
+              />
+              <button class="btn btn-primary">
+                <svg
+                  width="1.95rem"
+                  height="1.95rem"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 12L17 12L13 16M15 10L13 8"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <small class="w-100 mb-4 d-block">
+              Al utilizar nuestro servicio, usted acepta nuestros Términos de
+              uso.
+            </small>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-12 row d-none mx-auto" id="details">
+        <div class="col-12 col-md-4 my-2">
+          <!-- Meta Video -->
+          <a href="" id="video-link" target="_blank">
+            <img class="w-100" id="screenshot" />
+            <strong class="mt-2 d-block" id="title"></strong>
+          </a>
+        </div>
+        <div class="card col-12 col-md-8">
+          <!-- Formats -->
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Formato</th>
+                  <th>Resoluci&oacute;n</th>
+                  <th>Tama&ntilde;o</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="table"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="col-12 col-md-8 mx-auto my-4 text-center">
+        <h1 class="my-4">Descargador de videos de YouTube</h1>
+        <p>
+          ¿Cansado de buscar el software perfecto para descargar videos o música
+          en línea? ¡Tenemos una solución GRATUITA para usted! ¡El descargador
+          de videos You2Now te permite descargar videos o música con solo unos
+          cuantos clic!
+        </p>
+      </div>
+
+      <div class="col-12 col-md-8 mx-auto row">
+        <div class="col-6">
+          <h3>Instrucciones</h3>
+          <ol>
+            <li>Pegue directamente el enlace del video que desea convertir</li>
+            <li>
+              Haga clic en el botón "
+              <svg
+                width="1.5rem"
+                height="1.5rem"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 12L17 12L13 16M15 10L13 8"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              " para comenzar el proceso de conversión
+            </li>
+            <li>
+              Seleccione el formato de video/audio que desea descargar, luego
+              haga clic en el botón "Descargar"
+            </li>
+          </ol>
+        </div>
+        <div class="col-6">
+          <h3>Características</h3>
+          <ul>
+            <li>Descargas ilimitadas y siempre gratis</li>
+            <li>Convertidor de video de alta velocidad</li>
+            <li>No es necesario registrarse</li>
+            <li>Soporte de descarga con todos los formatos</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
