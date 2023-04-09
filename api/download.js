@@ -8,8 +8,8 @@ const bytes = require('bytes')
 config()
 app.use(cors())
 app.use(morgan('dev'))
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
+app.use(app.urlencoded({ extended: false }))
+app.use(app.json())
 
 const mapVideoFromYoutubeToUser = ({
   bitrate,
