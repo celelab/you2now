@@ -1,13 +1,21 @@
-const router = require('express').Router()
+const { config } = require('dotenv')
+const morgan = require('morgan')
+const cors = require('cors')
+const app = require('express')()
 const ytdl = require('ytdl-core')
 const bytes = require('bytes')
-const { format } = require('bytes')
+
+config()
+app.use(cors())
+app.use(morgan('dev'))
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
 const mapVideoFromYoutubeToUser = ({
   bitrate,
   qualityLabel: resolution,
   url,
-  mimeType,
+  mimeType
 }) => {
   const format = mimeType.split('/')[0]
   const size = bytes(bitrate)
@@ -15,7 +23,7 @@ const mapVideoFromYoutubeToUser = ({
   return { mimeType, size, resolution, url, format, extname }
 }
 
-router.get('/download', async (req, res) => {
+app.get('/download', async (req, res) => {
   try {
     const { url } = req.query
     const videoID = await ytdl.getURLVideoID(url)
@@ -31,7 +39,7 @@ router.get('/download', async (req, res) => {
       url: `https://youtube.com/embed/${videoID}`,
       screenshot: `https://img.youtube.com/vi/${videoID}/0.jpg`,
       title,
-      formats,
+      formats
     }
 
     return res.status(201).json(video)
@@ -41,4 +49,4 @@ router.get('/download', async (req, res) => {
   }
 })
 
-module.exports = router
+module.exports = app

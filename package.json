@@ -1,18 +1,15 @@
 {
   "name": "you2now",
   "version": "1.0.0",
+  "description": "A simple YouTube to MP3 downloader, with educational purposes.",
   "scripts": {
-    "phoenix": "rm -rf node_modules package-lock && npm install --no-audit --no-fund --no-package-lock",
-    "dev": "nodemon src",
-    "start": "node src"
+    "phoenix": "rm -rf node_modules package-lock && npm install --no-audit --no-fund --no-package-lock"
   },
   "dependencies": {
     "bytes": "3.1.2",
     "cors": "2.8.5",
     "dotenv": "16.0.3",
-    "ejs": "3.1.8",
     "express": "4.18.2",
-    "express-minify-html-2": "1.0.1",
     "morgan": "1.10.0",
     "ytdl-core": "4.11.2"
   },
