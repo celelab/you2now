@@ -1,11 +1,5 @@
-const { config } = require('dotenv')
-const morgan = require('morgan')
-const app = require('express')()
-const ytdl = require('ytdl-core')
-const bytes = require('bytes')
-
-config()
-app.use(morgan('dev'))
+import ytdl from 'ytdl-core'
+import bytes from 'bytes'
 
 const mapVideoFromYoutubeToUser = ({
   bitrate,
@@ -19,9 +13,9 @@ const mapVideoFromYoutubeToUser = ({
   return { mimeType, size, resolution, url, format, extname }
 }
 
-app.get('/download', async (req, res) => {
+export default async function Handler(request, respose) {
   try {
-    const { url } = req.query
+    const { url } = request.query
     const videoID = await ytdl.getURLVideoID(url)
     const metInfo = await ytdl.getInfo(url)
     const formats = metInfo.formats
@@ -38,11 +32,9 @@ app.get('/download', async (req, res) => {
       formats
     }
 
-    return res.status(201).json(video)
+    return respose.status(201).json(video)
   } catch (error) {
     console.error(error)
-    res.status(500).send({ error })
+    return respose.status(500).json({ error })
   }
-})
-
-module.exports = app
+}
