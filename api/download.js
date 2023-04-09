@@ -1,15 +1,11 @@
 const { config } = require('dotenv')
 const morgan = require('morgan')
-const cors = require('cors')
 const app = require('express')()
 const ytdl = require('ytdl-core')
 const bytes = require('bytes')
 
 config()
-app.use(cors())
 app.use(morgan('dev'))
-app.use(app.urlencoded({ extended: false }))
-app.use(app.json())
 
 const mapVideoFromYoutubeToUser = ({
   bitrate,
